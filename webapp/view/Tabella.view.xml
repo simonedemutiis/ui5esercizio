@@ -1,0 +1,63 @@
+<mvc:View controllerName="cloudapp.cloudapp.controller.Tabella" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:d="sap.m.Dialog" displayBlock="true" height="100%"> 
+
+       
+<Page title="Tabella" class="sapUIResponsiveContentPadding" showNavButton="true" navButtonPress=".onNavBack">
+<content>
+<Table id="tabella" headerText="{i18n>tabText}"  items="{mprod>/Products}">
+<headerToolbar>
+            <Toolbar>
+           <content>
+                <Text text="Cerca" />
+                <ToolbarSpacer />
+                <SearchField width="30%" search=".onSearch" class="sapUiVisibleOnlyOnDesktop"/>
+                   <Button tooltip="Sort"
+							id="sort"
+							press=".onSort"
+                            class="sapUiVisibleOnlyOnDesktop"
+							icon="sap-icon://sort"/>
+                </content>
+            </Toolbar>
+</headerToolbar>
+<columns>
+<Column >
+<Text  text="{i18n>prod_id}"/>
+</Column>
+<Column >
+<Text  text="{i18n>prod_name}"/>
+</Column>
+<Column >
+<Text  text="{i18n>quant}"/>
+</Column>
+<Column >
+<Text  text="{i18n>unit}"/>
+</Column>
+<Column >
+<Text  text="{i18n>stock}"/>
+</Column>
+<Column >
+<Text  text="{i18n>disc}"/>
+</Column>
+<Column >
+<Text  text="{i18n>info}"/>
+</Column>
+    </columns>
+    <items>
+    <ColumnListItem >
+    <cells>
+<Text  text="{mprod>ProductID}"/>
+<Text  text="{mprod>ProductName}"/>
+<Text  text="{mprod>QuantityPerUnit}"/>
+<Text  text="{mprod>UnitPrice}" />
+<Text  text="{mprod>UnitsInStock}"/>
+    <c:Icon color="{= ${mprod>Discontinued} ? 'green' : 'red' }"
+        alt="icona"
+        src="{= ${mprod>Discontinued} ? 'sap-icon://status-positive' : 'sap-icon://status-negative' }"/>
+    <c:Icon alt="icona" 
+        press=".onDialog" 
+        src="sap-icon://attachment"/>     
+    </cells>
+    </ColumnListItem></items>
+ </Table>
+</content>
+</Page>
+</mvc:View>
