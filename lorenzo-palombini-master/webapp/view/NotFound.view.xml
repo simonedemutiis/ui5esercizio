@@ -1,3 +1,0 @@
-<mvc:View controllerName="binding.binding.controller.NotFound" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
-    <MessagePage title="{i18n>notTitle}" description="{i18n>notDescription}" text="{i18n>notText}" showNavButton="true" navButtonPress=".onBack"/>
-</mvc:View>
