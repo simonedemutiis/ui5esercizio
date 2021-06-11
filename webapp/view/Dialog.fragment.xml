@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" 
+   controllerName="cloudapp.cloudapp.controller.Dialog">
+<SelectDialog
+id="dialog"
+noDataText="No Products Found"
+title="Select Product"
+search=".onValueHelpSearch"
+confirm=".onValueHelpClose"
+cancel=".onValueHelpClose"
+items="{path:'Suppliers>/Suppliers'}">
+<StandardListItem 
+title="{Suppliers>SupplierID}"
+description="{Suppliers>CompanyName}"
+type="Active"/>
+</SelectDialog>
+</core:FragmentDefinition>

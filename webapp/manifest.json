@@ -1,14 +1,12 @@
 {
     "_version": "1.32.0",
     "sap.app": {
-        "id": "cloudapp.cloudapp", 
+        "id": "cloudapp.cloudapp",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
             "version": "1.0.0"
         },
-        
-       
         "title": "{{appTitle}}",
         "description": "{{appDescription}}",
         "resources": "resources.json",
@@ -48,11 +46,11 @@
             "async": true,
             "id": "App"
         },
-        	"rootView1": {
-			"viewName": "sap.m.sample.DialogMessage.V",
-			"type": "XML",
-			"async": true
-		},
+        "rootView1": {
+            "viewName": "sap.m.sample.DialogMessage.V",
+            "type": "XML",
+            "async": true
+        },
         "dependencies": {
             "minUI5Version": "1.66.0",
             "libs": {
@@ -79,6 +77,13 @@
             "mprod": {
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "products.json"
+            },
+            "Suppliers": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "suppliers.json"
+            },
+            "Dettagli": {
+                "type": "sap.ui.model.json.JSONModel"
             }
         },
         "resources": {
@@ -108,6 +113,16 @@
                     "name": "Tabella",
                     "pattern": "Tabella",
                     "target": "targetTabella"
+                },
+                {
+                    "name": "DettaglioFornitori",
+                    "pattern": "DettaglioFornitori/{productID}",
+                    "target": "DettaglioFornitori"
+                },
+                {
+                    "name": "Fornitori",
+                    "pattern": "Fornitori",
+                    "target": "Fornitori"
                 }
             ],
             "targets": {
@@ -122,6 +137,18 @@
                     "viewName": "Tabella",
                     "viewLevel": 2,
                     "viewId": "Tabella"
+                },
+                "DettaglioFornitori": {
+                    "viewType": "XML",
+                    "viewName": "DettaglioFornitori",
+                    "viewLevel": 3,
+                    "viewId": "DettaglioFornitori"
+                },
+                "Fornitori": {
+                    "viewType": "XML",
+                    "viewName": "Fornitori",
+                    "viewLevel": 3,
+                    "viewId": "Fornitori"
                 }
             }
         }

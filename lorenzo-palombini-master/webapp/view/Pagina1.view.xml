@@ -1,0 +1,57 @@
+<mvc:View controllerName="binding.binding.controller.Pagina1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+    <Page>
+    <Panel headerText="{i18n>headerPanel1}" class="sapUiResponsiveMargin" width="auto">
+        <form:SimpleForm layout="ColumnLayout">
+            <Label text="{i18n>nome}" />
+            <Input valueLiveUpdate="true" width="50%" value="{utente>/nome}" enabled="{utente>/abilita}" />
+            <Label text="{i18n>cognome}" />
+            <Input valueLiveUpdate="true" width="50%" value="{utente>/cognome}" enabled="{utente>/abilita}" />
+            <Label text="{i18n>abilita}" />
+            <CheckBox selected="{utente>/abilita}" />
+        </form:SimpleForm>
+    </Panel>
+    <Panel headerText="{i18n>headerPanel2}" class="sapUiResponsiveMargin" width="auto">
+        <content>
+            <l:HorizontalLayout>
+                <l:VerticalLayout class="sapUiSmallMargin">
+                    <Label labelFor="indirizzo" text="{i18n>indirizzo}" class="sapUiSmallMarginTop sapUiSmallMarginBottom" />
+                    <FormattedText id="indirizzo" width="auto" htmlText="{utente>/indirizzo/via}&lt;br>{utente>/indirizzo/codicepostale} {utente>/indirizzo/citta}&lt;br>{utente>/indirizzo/paese}" />
+                    <Link text="{i18n>email}" href="{ parts: ['utente>/nome','utente>/cognome'], formatter: '.formatMail' }" />
+                </l:VerticalLayout>
+                <l:VerticalLayout class="sapUiSmallMargin">
+                    <Label labelFor="importo" text="{i18n>importo}" class="sapUiSmallMarginTop sapUiSmallMarginBottom" />
+                    <Input id="importo" enabled="{utente>/abilita}" value="{ parts: [ {path: 'utente>/importo'},
+                                      {path: 'utente>/divisa'} ],
+                             type: 'sap.ui.model.type.Currency',
+                             formatOptions: { showMeasure: false } }" description="{utente>/divisa}" width="300px" />
+                </l:VerticalLayout>
+            </l:HorizontalLayout>
+        </content>
+    </Panel>
+    <Panel headerText="{i18n>headerPanel3}" class="sapUiResponsiveMargin" width="auto">
+        <List items="{ciccio>/Products}">
+            <items>
+                <ObjectListItem title="{ciccio>ProductName}" 
+                    number="{ parts: [ { path: 'ciccio>UnitPrice' }, { path: 'utente>/divisa' } ],
+                              type: 'sap.ui.model.type.Currency',
+                              formatOptions: { showMeasure: false } }"
+                    numberUnit="{utente>/divisa}"
+                    press="onElementPress"
+                    type="Active"/>
+            </items>
+        </List>
+    </Panel>
+    <Panel id="product" headerText="{i18n>headerPanel4}" class="sapUiResponsiveMargin" width="auto">
+        <form:SimpleForm layout="ColumnLayout">
+            <Label text="{i18n>ProductID}" />
+            <Input width="50%" value="{ciccio>ProductID}" />
+            <Label text="{i18n>ProductName}" />
+            <Input width="50%" value="{ciccio>ProductName}" />
+            <Label text="{i18n>QuantityPerUnit}" />
+            <Input width="50%" value="{ciccio>QuantityPerUnit}" />    
+            <Label text="{i18n>Discontinued}"/>
+            <CheckBox selected="{ciccio>Discontinued}" />
+        </form:SimpleForm>        
+    </Panel>
+    </Page>
+</mvc:View>

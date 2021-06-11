@@ -1,0 +1,28 @@
+<mvc:View xmlns:core="sap.ui.core"
+    controllerName="cloudapp.cloudapp.controller.Fornitori"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+      >
+ <Page title="Fornitori" showNavButton="true" navButtonPress=".onNavHome">
+  
+    	<l:VerticalLayout class="sapUiContentPadding" width="100%" >
+		<Label text="Fornitori" labelFor="fornitoriInput" />
+		<Input
+			id="input"
+			type="Number"
+			placeholder="Inserire un fornitore..."
+			showValueHelp="true"
+			valueHelpRequest=".onDefaultDialogPress"
+			class="sapUiSmallMarginBottom"
+			width="30%" 
+            suggestionItems="{path: 'Suppliers>/Suppliers'}"
+            submit="onError" >
+            <suggestionItems>
+        <core:Item text="{Suppliers>SupplierID}" />
+			        </suggestionItems>
+            </Input>
+	</l:VerticalLayout>
+    </Page> 
+</mvc:View>

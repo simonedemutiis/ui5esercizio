@@ -3,7 +3,7 @@
        
 <Page title="Tabella" class="sapUIResponsiveContentPadding" showNavButton="true" navButtonPress=".onNavBack">
 <content>
-<Table id="tabella" headerText="{i18n>tabText}"  items="{mprod>/Products}">
+<Table id="tabella" headerText="{i18n>tabText}"  items="{mprod>/Products}" >
 <headerToolbar>
             <Toolbar>
            <content>
@@ -40,6 +40,9 @@
 <Column >
 <Text  text="{i18n>info}"/>
 </Column>
+<Column >
+<Text  text="{i18n>dettfor}"/>
+</Column>
     </columns>
     <items>
     <ColumnListItem >
@@ -54,7 +57,10 @@
         src="{= ${mprod>Discontinued} ? 'sap-icon://status-positive' : 'sap-icon://status-negative' }"/>
     <c:Icon alt="icona" 
         press=".onDialog" 
-        src="sap-icon://attachment"/>     
+        src="sap-icon://attachment"/>    
+        <c:Icon alt="icona"
+        press=".onClick"
+        src="sap-icon://feeder-arrow"></c:Icon> 
     </cells>
     </ColumnListItem></items>
  </Table>

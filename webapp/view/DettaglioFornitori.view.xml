@@ -1,0 +1,36 @@
+<mvc:View xmlns:core="sap.ui.core"
+    controllerName="cloudapp.cloudapp.controller.DettaglioFornitori"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:Tile="sap.m.GenericTile"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+>
+<Page title="Dettaglio Fornitori" showNavButton="true" navButtonPress="onBack">
+ <Panel headerText="{Dati dei fornitori}" class="sapUiResponsiveMargin" width="auto">
+        <form:SimpleForm layout="ColumnLayout">
+            <Label text="{i18n>ProductID}" />
+            <Input  width="50%" value="{Dettagli>/ProductID}" enabled="{products>/Discontinued}" />
+            <Label text="{i18n>SupplierID}" />
+            <Input width="50%" value="{Dettagli>/SupplierID}" enabled="{products>/Discontinued}" />
+             <Label text="{i18n>CompanyName}" />
+            <Input width="50%" value="{Dettagli>/CompanyName}" enabled="{products>/Discontinued}" />
+             <Label text="{i18n>ContactName}" />
+            <Input width="50%" value="{Dettagli>/ContactName}" enabled="{products>/Discontinued}" />
+             <Label text="{i18n>ContactTitle}" />
+            <Input width="50%" value="{Dettagli>/ContactTitle}" enabled="{products>/Discontinued}" />
+             <Label text="{i18n>Address}" />
+            <Input width="50%" value="{Dettagli>/Address}" enabled="{products>/Discontinued}" />
+             <Label text="{i18n>City}" />
+            <Input width="50%" value="{Dettagli>/City}" enabled="{products>/Discontinued}" />
+             <Label text="{i18n>Region}" />
+            <Input width="50%" value="{Dettagli>/Region}" enabled="{products>/Discontinued}" />
+             <Label text="{i18n>PostalCode}" />
+            <Input width="50%" value="{Dettagli>/PostalCode}" enabled="{products>/Discontinued}" />
+             <Label text="{i18n>Country}" />
+            <Input width="50%" value="{Dettagli>/Country}" enabled="{products>/Discontinued}" />
+        </form:SimpleForm>
+    </Panel>
+    </Page>
+</mvc:View>

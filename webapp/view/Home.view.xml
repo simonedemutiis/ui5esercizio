@@ -19,6 +19,25 @@
                         </content>
                     </TileContent>
                 </tileContent>
+
+                
+            </GenericTile>
+
+               <GenericTile
+                class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                header="{i18n>TextTile1}"
+                press=".onNavSup"
+                >
+                
+                <tileContent>
+                    <TileContent>
+                        <content>
+                            <ImageContent src="sap-icon://supplier" />
+                        </content>
+                    </TileContent>
+                </tileContent>
+
+                
             </GenericTile>
             </Page>
 </mvc:View>
