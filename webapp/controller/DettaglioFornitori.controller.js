@@ -36,6 +36,7 @@ sap.ui.define([
                         this.getView().getModel("products").setProperty("/Discontinued", bDiscontinued)
                     } else {
                         MessageBox.error("Nessun fornitore associato")
+                     scrollbars: false
                     }
                     dettagli.updateBindings();
                 } else {

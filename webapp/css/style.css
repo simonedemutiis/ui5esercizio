@@ -1,1 +1,6 @@
 /* Enter your custom styles here */
+
+#tabella{
+width: 150vw;
+overflow-x: visible;
+}
