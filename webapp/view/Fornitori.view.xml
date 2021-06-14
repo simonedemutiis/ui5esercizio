@@ -14,15 +14,18 @@
 			type="Number"
 			placeholder="Inserire un fornitore..."
 			showValueHelp="true"
+            
 			valueHelpRequest=".onDefaultDialogPress"
 			class="sapUiSmallMarginBottom"
 			width="30%" 
             suggestionItems="{path: 'Suppliers>/Suppliers'}"
             submit="onError" >
             <suggestionItems>
+            
         <core:Item text="{Suppliers>SupplierID}" />
 			        </suggestionItems>
             </Input>
+            	<Button icon="sap-icon://information" text="Ulteriori informazioni" type="Default" press="onSuppliers" ariaLabelledBy="editButtonLabel"/>
 	</l:VerticalLayout>
     </Page> 
 </mvc:View>

@@ -41,6 +41,7 @@ sap.ui.define([
                     dettagli.updateBindings();
                 } else {
                 }
-            }
+            },
+         
         });
     });

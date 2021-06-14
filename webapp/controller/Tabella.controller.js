@@ -104,6 +104,7 @@ sap.ui.define([
                 var fil = s.Suppliers.filter(function (el) {
                     return el.ProductID === pID;
                 })
+                debugger
                 if (fil.length > 0) {
                     // dettagli.setData(fil[0])
                     this.getRouter().navTo("DettaglioFornitori", {productID: pID} )

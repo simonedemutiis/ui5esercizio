@@ -17,7 +17,7 @@
                 </Toolbar>
             </headerToolbar>
                     <columns >
-                    <Column  minScreenWidth="Small" demandPopin="true" >
+                    <Column  minScreenWidth="Small" demandPopin="true">
                     <Text  text="{i18n>prod_id}"/>
                     </Column>
                     <Column  minScreenWidth="Small" demandPopin="true" >

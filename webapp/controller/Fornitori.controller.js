@@ -5,10 +5,8 @@ sap.ui.define([
    "sap/ui/model/Filter",
   "sap/ui/model/FilterOperator",
   "sap/m/MessageBox",
-  "sap/ui/core/routing/History",
- 
-
-], function (Controller, UIComponent, Fragment, Filter, FilterOperator, MessageBox, History) {
+  "sap/ui/core/routing/History", 
+], function (Controller, UIComponent, Fragment, Filter, FilterOperator, MessageBox, History, ) {
     "use strict";
 
     return Controller.extend("cloudapp.cloudapp.controller.Fornitori", {
@@ -56,8 +54,7 @@ sap.ui.define([
 			this.byId("input").setValue(oSelectedItem.getTitle());
         },
         onError: function () {
-                 var input = this.byId("input").getValue();
-                 debugger
+                 var input = this.byId("input").getValue(); 
                 var oForm = this.getOwnerComponent().getModel("Suppliers");
                 var fornitori = oForm.getData().Suppliers
                 var filtro = fornitori.filter((element) => { return element.SupplierID == input })
@@ -77,6 +74,39 @@ sap.ui.define([
 				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 				oRouter.navTo("Home", true);
 			}
-		}
+        },
+      
+            onSuppliers: function (oEvent) {
+           var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("Suppliers", true);
+
+                 var input = this.byId("input").getValue();
+                 debugger
+                var oForm = this.getOwnerComponent().getModel("Suppliers");
+                var fornitori = oForm.getData().Suppliers
+                debugger
+                var filtro = fornitori.filter((element) => { return element.SupplierID == input })
+
+                // var oSource = oEvent.getSource();
+                // var oContext = oSource.getBindingContext("Suppliers")
+                // debugger
+                // var pID = oContext.getProperty("ProductID")
+
+                // var suppliers = this.getOwnerComponent().getModel("Suppliers");
+                // var s = suppliers.getData();
+                // var fil = s.Suppliers.filter(function (el) {
+                //     return el.ProductID === pID;
+                // })
+                // debugger
+                // if (fil.length > 0) {
+                    
+                //     this.getRouter().navTo("DettaglioFornitori", {productID: pID} )
+                // } else {
+                //  MessageBox.error("Nessun fornitore associato")
+                // }
+            
+       },
+      
+    
      })
 })
