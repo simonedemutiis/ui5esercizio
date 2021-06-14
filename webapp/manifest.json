@@ -126,7 +126,7 @@
                 },
                  {
                     "name": "Suppliers",
-                    "pattern": "Suppliers",
+                    "pattern": "Suppliers/{SupplierID}",
                     "target": "Suppliers"
                 }
 

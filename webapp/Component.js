@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"cloudapp/cloudapp/model/models"
-], function (UIComponent, Device, models) {
+    "cloudapp/cloudapp/model/models",
+     "sap/ui/model/json/JSONModel"
+], function (UIComponent, Device, models, JSONModel) {
 	"use strict";
 
 	return UIComponent.extend("cloudapp.cloudapp.Component", {
@@ -17,6 +18,7 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function () {
+
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
@@ -25,6 +27,8 @@ sap.ui.define([
             
 			// set the device model
             this.setModel(models.createDeviceModel(), "device");
+
+           
             
 		}
 	});

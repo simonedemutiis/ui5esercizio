@@ -5,30 +5,42 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:m="sap.suite.ui.microchart"
+     
       >
  <Page title="Fornitori" showNavButton="true" navButtonPress=".onNavForn">
-<Panel headerText="Informazioni dei fornitori" class="sapUiResponsiveMargin" width="auto">
+<Panel headerText="Status Priorità" class="sapUiResponsiveMargin" width="auto">
+<l:HorizontalLayout>
+			<m:RadialMicroChart alignContent="Right" size="M"  press="onMicroChart" class="sapUiSmallMargin" id="MicroChart"/>
+            <Button press="onMicroChart" text="Aggiorna" icon="sap-icon://refresh"></Button>
+		</l:HorizontalLayout>
+        <Panel headerText="Informazioni dei fornitori">
 <IconTabBar
 		id="idIconTabBarMulti"
 		expanded="{device>/isNoPhone}"
 		class="sapUiResponsiveContentPadding">
 		<items>
 			<IconTabFilter icon="sap-icon://hint" key="info" design="Vertical" >
-            <Text text="Company Name" />
-               <Text text="Company Name" />
-               <Text text="Company Name" />
+            <l:VerticalLayout>
+            <Text text="Company Name: {Suppliers>CompanyName}"/>
+               <Text text=" Contact Name: {Suppliers>ContactName}"/>
+               <Text text="Contact Title :{Suppliers>ContactTitle}"/>
+               </l:VerticalLayout>
 			</IconTabFilter>
 			<IconTabFilter
 				icon="sap-icon://inspection"
 				key="inspection">
-				<Text text="Attachments go here ..." />
-			</IconTabFilter>
-            
+                <l:VerticalLayout>
+				<Text text="Address: {Suppliers>Address}"/>
+                <Text text="City: {Suppliers>City}"/>
+                <Text text=" Postal Code: {Suppliers>PostalCode}"/>
+                <Text text="Country: {Suppliers>Country}" id="country"/>
+                </l:VerticalLayout>
+                
+</IconTabFilter>   
 		</items>
 	</IconTabBar>
-    <l:HorizontalLayout>
-			<m:RadialMicroChart  size="M" percentage="45" press="press" class="sapUiSmallMargin"/>
-		</l:HorizontalLayout>
+    </Panel>
+    
 </Panel>
     </Page> 
 </mvc:View>

@@ -25,7 +25,6 @@
         <core:Item text="{Suppliers>SupplierID}" />
 			        </suggestionItems>
             </Input>
-            	<Button icon="sap-icon://information" text="Ulteriori informazioni" type="Default" press="onSuppliers" ariaLabelledBy="editButtonLabel"/>
 	</l:VerticalLayout>
     </Page> 
 </mvc:View>

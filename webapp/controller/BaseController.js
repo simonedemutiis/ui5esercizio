@@ -26,7 +26,7 @@ sap.ui.define(
                     this.getRouter().navTo("Home", {}, true)
                 }
             },
-
+          
 
             onBack: function () {
                 var oModel = this.getOwnerComponent().getModel("Dettagli");
@@ -40,8 +40,8 @@ sap.ui.define(
                     this.getRouter().navTo("Tabella", {}, true)
                 }
             },
-             
-      
+
+
         });
     }
 );
