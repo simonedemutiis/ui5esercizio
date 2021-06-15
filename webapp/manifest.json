@@ -84,6 +84,10 @@
             },
             "Dettagli": {
                 "type": "sap.ui.model.json.JSONModel"
+            },
+            "Meetups": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "Meetups.json"
             }
         },
         "resources": {
@@ -128,6 +132,11 @@
                     "name": "Suppliers",
                     "pattern": "Suppliers/{SupplierID}",
                     "target": "Suppliers"
+                },
+                 {
+                    "name": "Meetups",
+                    "pattern": "Meetups",
+                    "target": "Meetups"
                 }
 
             ],
@@ -161,6 +170,12 @@
                     "viewName": "Suppliers",
                     "viewLevel": 4,
                     "viewId": "Suppliers"
+                },
+                "Meetups": {
+                    "viewType": "XML",
+                    "viewName": "Meetups",
+                    "viewLevel": 5,
+                    "viewId": "Meetups"
                 }
             }
         }

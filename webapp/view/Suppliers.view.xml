@@ -5,13 +5,14 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:m="sap.suite.ui.microchart"
+  
      
       >
  <Page title="Fornitori" showNavButton="true" navButtonPress=".onNavForn">
 <Panel headerText="Status Priorità" class="sapUiResponsiveMargin" width="auto">
 <l:HorizontalLayout>
 			<m:RadialMicroChart alignContent="Right" size="M"  press="onMicroChart" class="sapUiSmallMargin" id="MicroChart"/>
-            <Button press="onMicroChart" text="Aggiorna" icon="sap-icon://refresh"></Button>
+              <Button press="onMicroChart" text="Aggiorna" icon="sap-icon://refresh"></Button>
 		</l:HorizontalLayout>
         <Panel headerText="Informazioni dei fornitori">
 <IconTabBar

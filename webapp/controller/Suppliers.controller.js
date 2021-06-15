@@ -17,6 +17,7 @@ sap.ui.define([
             var oRouter = UIComponent.getRouterFor(this);
             oRouter.getRoute("Suppliers").attachPatternMatched(this.onRouteMatched, this);
 
+
         },
 
         onNavForn: function () {
@@ -33,6 +34,7 @@ sap.ui.define([
         },
 
         onRouteMatched: function (oEvent) {
+
             var sId = oEvent.getParameter("arguments").SupplierID;
             var c = this.onCheck(sId)
             if (!c) {
@@ -44,7 +46,9 @@ sap.ui.define([
                 this.getView().bindElement({
                     path: "/Suppliers/" + (c - 1),
                     model: "Suppliers"
+
                 })
+
             }
 
 
@@ -54,9 +58,10 @@ sap.ui.define([
                 return sId - 1;
             }
         },
-      
+
 
         onMicroChart: function () {
+            debugger
             var sCountry = this.byId("country").getProperty("text")
             var modify = sCountry.substr(9)
             var id = this.byId("MicroChart")
@@ -76,7 +81,7 @@ sap.ui.define([
                 default:
                     break;
             }
-           
+
         }
 
     })

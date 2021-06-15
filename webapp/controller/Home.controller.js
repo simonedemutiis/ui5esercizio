@@ -6,6 +6,8 @@ sap.ui.define([
 		"use strict";
 
         return BaseController.extend("cloudapp.cloudapp.controller.Home", {
-			
+			onNavMeet: function () {
+                this.getRouter().navTo("Meetups")
+            }
 		});
 	});

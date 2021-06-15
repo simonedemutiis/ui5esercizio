@@ -11,7 +11,6 @@
                 header="{i18n>TextTile}"
                 press=".onNavToValidRoute"
                 >
-                
                 <tileContent>
                     <TileContent>
                         <content>
@@ -22,13 +21,11 @@
 
                 
             </GenericTile>
-
                <GenericTile
                 class="sapUiTinyMarginBegin sapUiTinyMarginTop"
                 header="{i18n>TextTile1}"
                 press=".onNavSup"
                 >
-                
                 <tileContent>
                     <TileContent>
                         <content>
@@ -36,8 +33,21 @@
                         </content>
                     </TileContent>
                 </tileContent>
+            </GenericTile>
 
-                
+            <GenericTile
+            visible="{= ${device>/system/desktop} }"
+                class="sapUiTinyMarginBegin sapUiTinyMarginTop" 
+                header="{i18n>TextTile2}"
+                press=".onNavMeet"
+                >
+                <tileContent>
+                    <TileContent>
+                        <content>
+                            <ImageContent src="sap-icon://activity-individual" />
+                        </content>
+                    </TileContent>
+                </tileContent> 
             </GenericTile>
             </Page>
 </mvc:View>

@@ -1,0 +1,54 @@
+<mvc:View xmlns:core="sap.ui.core"
+    controllerName="cloudapp.cloudapp.controller.Meetups"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:g="sap.m.ScreenSize" 
+    xmlns:c="sap.ui.core" 
+    xmlns:s="sap.m.Column"
+    xmlns:d="sap.m.Dialog"
+    xmlns:t="sap.m.Table"
+      >
+ <Page title="Pianificazione Incontri" showNavButton="true" navButtonPress=".onNaviga">
+
+   <Table id="tabellaMeet" headerText="{i18n>tabMeetText}" items="{Meetups>/}">
+   <headerToolbar>
+                <Toolbar>
+                    <content>
+                         <HBox width="100%">
+            <SearchField id="search" liveChange="onFilter" placeholder="Filtra per titolo o descrizione" />
+             <Button icon="sap-icon://sort" press="onSortId" tooltip="Sort" />
+          </HBox>
+                       
+                    </content>
+                </Toolbar>
+            </headerToolbar>
+            <columns >
+                    <Column id="sort" minScreenWidth="Small" demandPopin="true">
+                    <Text  text="{i18n>MeetupID}"/>
+                    </Column>
+                    <Column  minScreenWidth="Small" demandPopin="true" >
+                    <Text  text="{i18n>Title}"/>
+                    </Column>
+                    <Column  minScreenWidth="Small" demandPopin="true" >
+                    <Text  text="{i18n>EventDate}"/>
+                    </Column>
+                    <Column  minScreenWidth="Small" demandPopin="true" >
+                    <Text  text="{i18n>Description}"/>
+                    </Column>
+            </columns>
+                      <items >
+                        <ColumnListItem  >
+                        <cells >
+                    <Text  text="{Meetups>MeetupID}"/>
+                    <Text  text="{Meetups>Title}"/>
+                    <Text  text="{ path: 'Meetups>EventDate', formatter: '.formatter.FormatterData' }" />
+                    <Text  text="{Meetups>Description}" />
+                        </cells>
+                        </ColumnListItem>
+                        </items>
+   </Table>
+
+    </Page> 
+</mvc:View>

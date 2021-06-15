@@ -14,17 +14,17 @@
 			type="Number"
 			placeholder="Inserire un fornitore..."
 			showValueHelp="true"
-            
+            submit="onError"
 			valueHelpRequest=".onDefaultDialogPress"
 			class="sapUiSmallMarginBottom"
 			width="30%" 
-            suggestionItems="{path: 'Suppliers>/Suppliers'}"
-            submit="onError" >
+            suggestionItems="{path: 'Suppliers>/Suppliers'}">
             <suggestionItems>
-            
         <core:Item text="{Suppliers>SupplierID}" />
-			        </suggestionItems>
+			</suggestionItems>
             </Input>
+                        
+<Button press="onError" text="Cerca" icon="sap-icon://search"></Button>
 	</l:VerticalLayout>
     </Page> 
 </mvc:View>
