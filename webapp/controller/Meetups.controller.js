@@ -14,6 +14,7 @@ sap.ui.define([
             formatter: formatter,
 
             onInit: function () {
+                
 
             },
 
@@ -55,8 +56,18 @@ sap.ui.define([
                 } else {
                     this.getRouter().navTo("Home", {}, true)
                 }
+            },
+            
+            onPressDett: function( oEvent ) {
+      
+    let sPath = oEvent.getSource().getBindingContext("Meetups").getPath()
+      let oModel = this.getOwnerComponent().getModel("Meetups").getProperty(sPath)
+      let id =  oModel.MeetupID;
+      
+     this.getRouter().navTo("DettaglioMeetups" , { MeetupID: id })
             }
-        });
+    });
+        
 
 
     });

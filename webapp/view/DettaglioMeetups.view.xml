@@ -1,0 +1,16 @@
+<mvc:View xmlns:core="sap.ui.core"
+    controllerName="cloudapp.cloudapp.controller.DettaglioMeetups"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:m="sap.suite.ui.microchart"
+  
+     
+      >
+  <Page title="{Meetups>Title}" showNavButton="true" navButtonPress="onNavBack">
+    <headerContent>
+      <GenericTag text="Meet n° {Meetups>MeetupID}" press="onDettaglioFornitore" status="{= ${Meetups>MeetupID} % 2 === 0 ? 'Error' : 'Success' }"/>
+    </headerContent>
+  </Page>
+</mvc:View>

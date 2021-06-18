@@ -17,7 +17,7 @@
                 <Toolbar>
                     <content>
                          <HBox width="100%">
-            <SearchField id="search" liveChange="onFilter" placeholder="Filtra per titolo o descrizione" />
+            <SearchField id="search" liveChange="onFilter" placeholder="Filtra per titolo o descrizione"/>
              <Button icon="sap-icon://sort" press="onSortId" tooltip="Sort" />
           </HBox>
                        
@@ -39,10 +39,12 @@
                     </Column>
             </columns>
                       <items >
-                        <ColumnListItem  >
+                        <ColumnListItem  type="Navigation"
+                        press="onPressDett">
+
                         <cells >
-                    <Text  text="{Meetups>MeetupID}"/>
-                    <Text  text="{Meetups>Title}"/>
+                    <Text  text="{Meetups>MeetupID}" id="id"/>
+                    <Text  text="{Meetups>Title}" id="title"/>
                     <Text  text="{ path: 'Meetups>EventDate', formatter: '.formatter.FormatterData' }" />
                     <Text  text="{Meetups>Description}" />
                         </cells>

@@ -89,6 +89,7 @@
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "Meetups.json"
             }
+            
         },
         "resources": {
             "css": [
@@ -137,6 +138,11 @@
                     "name": "Meetups",
                     "pattern": "Meetups",
                     "target": "Meetups"
+                },
+                 {
+                    "name": "DettaglioMeetups",
+                    "pattern": "Meetups/{MeetupID}",
+                    "target": "DettaglioMeetups"
                 }
 
             ],
@@ -176,6 +182,12 @@
                     "viewName": "Meetups",
                     "viewLevel": 5,
                     "viewId": "Meetups"
+                },
+                 "DettaglioMeetups": {
+                    "viewType": "XML",
+                    "viewName": "DettaglioMeetups",
+                    "viewLevel": 6,
+                    "viewId": "DettaglioMeetups"
                 }
             }
         }
